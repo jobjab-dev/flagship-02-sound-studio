@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+:root {
+  --deck: #E4E2DC;
+  --chassis: #D8D5CD;
+  --plate: #ECEAE3;
+  --glass: #16181A;
+  --glass-deep: #0F1113;
+  --safety-orange: #F24E1E;
+  --patch-cobalt: #1D5BFF;
+  --ink: #1B1C1E;
+  --ink-muted: #5A5C61;
+  --bezel: #BEB9AE;
+  --bezel-dark: #9B9588;
+}
+
+@theme inline {
+  --font-display: "Chakra Petch", system-ui, sans-serif;
+  --font-sans: "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  --font-mono: "Azeret Mono", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: var(--deck);
+  color: var(--ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background-color: var(--safety-orange);
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid var(--patch-cobalt);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--deck);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bezel-dark);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Brushed aluminum hairline texture strictly grounded to hardware chassis */
+.chassis-brushed {
+  background-color: var(--chassis);
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(0, 0, 0, 0.025) 50%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
